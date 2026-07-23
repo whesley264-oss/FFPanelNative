@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.ffpanel.native'
+    namespace 'com.ffpanel.panel'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.ffpanel.native"
+        applicationId "com.ffpanel.panel"
         minSdk 24
         targetSdk 34
         versionCode 1

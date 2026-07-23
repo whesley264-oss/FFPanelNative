@@ -1,10 +1,10 @@
-package com.ffpanel.native
+package com.ffpanel.panel
 
 import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.ffpanel.native.databinding.ActivityMainBinding
+import com.ffpanel.panel.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

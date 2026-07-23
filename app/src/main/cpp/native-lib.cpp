@@ -131,12 +131,12 @@ extern "C" {
 // ============ FEATURE FUNCTIONS ============
 
 JNIEXPORT jint JNICALL
-Java_com_ffpanel_native_MainActivity_getFeatureCount(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getFeatureCount(JNIEnv *env, jobject) {
     return 5;
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_ffpanel_native_MainActivity_getFeatureName(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getFeatureName(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < 5) {
         return env->NewStringUTF(g_state.features[index].name);
     }
@@ -144,7 +144,7 @@ Java_com_ffpanel_native_MainActivity_getFeatureName(JNIEnv *env, jobject, jint i
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_ffpanel_native_MainActivity_getFeatureDesc(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getFeatureDesc(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < 5) {
         return env->NewStringUTF(g_state.features[index].description);
     }
@@ -152,7 +152,7 @@ Java_com_ffpanel_native_MainActivity_getFeatureDesc(JNIEnv *env, jobject, jint i
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isFeatureEnabled(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_isFeatureEnabled(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < 5) {
         return g_state.features[index].enabled;
     }
@@ -160,7 +160,7 @@ Java_com_ffpanel_native_MainActivity_isFeatureEnabled(JNIEnv *env, jobject, jint
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setFeatureEnabled(JNIEnv *env, jobject, jint index, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setFeatureEnabled(JNIEnv *env, jobject, jint index, jboolean enabled) {
     if (index >= 0 && index < 5) {
         g_state.features[index].enabled = enabled;
         if (index == 4 && enabled) {
@@ -172,7 +172,7 @@ Java_com_ffpanel_native_MainActivity_setFeatureEnabled(JNIEnv *env, jobject, jin
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getFeatureIntensity(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getFeatureIntensity(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < 5) {
         return g_state.features[index].intensity;
     }
@@ -180,7 +180,7 @@ Java_com_ffpanel_native_MainActivity_getFeatureIntensity(JNIEnv *env, jobject, j
 }
 
 JNIEXPORT jint JNICALL
-Java_com_ffpanel_native_MainActivity_getActiveModsCount(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getActiveModsCount(JNIEnv *env, jobject) {
     int count = 0;
     for (int i = 0; i < 5; i++) {
         if (g_state.features[i].enabled) count++;
@@ -191,74 +191,74 @@ Java_com_ffpanel_native_MainActivity_getActiveModsCount(JNIEnv *env, jobject) {
 // ============ ESP MAIN TOGGLE ============
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isESPEnabled(JNIEnv *env, jobject) {
     return g_state.features[4].enabled ? JNI_TRUE : JNI_FALSE;
 }
 
 // ============ ESP INDIVIDUAL TOGGLES ============
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isBoxESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isBoxESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.boxEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setBoxESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setBoxESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.boxEnabled = enabled;
     LOGI("Box ESP: %s", enabled ? "ON" : "OFF");
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isLineESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isLineESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.lineEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setLineESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setLineESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.lineEnabled = enabled;
     LOGI("Line ESP: %s", enabled ? "ON" : "OFF");
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isSkeletonESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isSkeletonESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.skeletonEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setSkeletonESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setSkeletonESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.skeletonEnabled = enabled;
     LOGI("Skeleton ESP: %s", enabled ? "ON" : "OFF");
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isNameESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isNameESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.nameEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setNameESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setNameESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.nameEnabled = enabled;
     LOGI("Name ESP: %s", enabled ? "ON" : "OFF");
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isGlowESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isGlowESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.glowEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setGlowESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setGlowESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.glowEnabled = enabled;
     LOGI("Glow ESP: %s", enabled ? "ON" : "OFF");
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isCorneredESPEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isCorneredESPEnabled(JNIEnv *env, jobject) {
     return g_state.esp.corneredEnabled ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setCorneredESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
+Java_com_ffpanel_panel_MainActivity_setCorneredESPEnabled(JNIEnv *env, jobject, jboolean enabled) {
     g_state.esp.corneredEnabled = enabled;
     LOGI("Cornered Box ESP: %s", enabled ? "ON" : "OFF");
 }
@@ -266,12 +266,12 @@ Java_com_ffpanel_native_MainActivity_setCorneredESPEnabled(JNIEnv *env, jobject,
 // ============ ESP ENEMY DATA ============
 
 JNIEXPORT jint JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyCount(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getEnemyCount(JNIEnv *env, jobject) {
     return (jint)g_enemies.size();
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyX(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyX(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].screenX;
     }
@@ -279,7 +279,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyX(JNIEnv *env, jobject, jint index)
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyY(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyY(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].screenY;
     }
@@ -287,7 +287,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyY(JNIEnv *env, jobject, jint index)
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyWidth(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyWidth(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].width;
     }
@@ -295,7 +295,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyWidth(JNIEnv *env, jobject, jint in
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyHeight(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyHeight(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].height;
     }
@@ -303,7 +303,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyHeight(JNIEnv *env, jobject, jint i
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyDistance(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyDistance(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].distance;
     }
@@ -311,7 +311,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyDistance(JNIEnv *env, jobject, jint
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyHealth(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyHealth(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].health;
     }
@@ -319,7 +319,7 @@ Java_com_ffpanel_native_MainActivity_getEnemyHealth(JNIEnv *env, jobject, jint i
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isEnemyVisible(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_isEnemyVisible(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return g_enemies[index].visible ? JNI_TRUE : JNI_FALSE;
     }
@@ -327,7 +327,7 @@ Java_com_ffpanel_native_MainActivity_isEnemyVisible(JNIEnv *env, jobject, jint i
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_ffpanel_native_MainActivity_getEnemyName(JNIEnv *env, jobject, jint index) {
+Java_com_ffpanel_panel_MainActivity_getEnemyName(JNIEnv *env, jobject, jint index) {
     if (index >= 0 && index < (int)g_enemies.size()) {
         return env->NewStringUTF(g_enemies[index].name);
     }
@@ -335,29 +335,29 @@ Java_com_ffpanel_native_MainActivity_getEnemyName(JNIEnv *env, jobject, jint ind
 }
 
 JNIEXPORT jint JNICALL
-Java_com_ffpanel_native_MainActivity_getActiveESPCount(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getActiveESPCount(JNIEnv *env, jobject) {
     return getActiveESPCount();
 }
 
 // ============ ESP COLOR & SETTINGS ============
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getESPR(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getESPR(JNIEnv *env, jobject) {
     return g_state.esp.red;
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getESPG(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getESPG(JNIEnv *env, jobject) {
     return g_state.esp.green;
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getESPB(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getESPB(JNIEnv *env, jobject) {
     return g_state.esp.blue;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setESPColor(JNIEnv *env, jobject, jfloat r, jfloat g, jfloat b) {
+Java_com_ffpanel_panel_MainActivity_setESPColor(JNIEnv *env, jobject, jfloat r, jfloat g, jfloat b) {
     g_state.esp.red = r;
     g_state.esp.green = g;
     g_state.esp.blue = b;
@@ -365,59 +365,59 @@ Java_com_ffpanel_native_MainActivity_setESPColor(JNIEnv *env, jobject, jfloat r,
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getESPGlowIntensity(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getESPGlowIntensity(JNIEnv *env, jobject) {
     return g_state.esp.glowIntensity;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setESPGlowIntensity(JNIEnv *env, jobject, jfloat intensity) {
+Java_com_ffpanel_panel_MainActivity_setESPGlowIntensity(JNIEnv *env, jobject, jfloat intensity) {
     g_state.esp.glowIntensity = intensity;
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getESPThickness(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getESPThickness(JNIEnv *env, jobject) {
     return g_state.esp.thickness;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setESPThickness(JNIEnv *env, jobject, jfloat thickness) {
+Java_com_ffpanel_panel_MainActivity_setESPThickness(JNIEnv *env, jobject, jfloat thickness) {
     g_state.esp.thickness = thickness;
 }
 
 // ============ SETTINGS FUNCTIONS ============
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getSensitivity(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getSensitivity(JNIEnv *env, jobject) {
     return g_state.sensitivity;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setSensitivity(JNIEnv *env, jobject, jfloat value) {
+Java_com_ffpanel_panel_MainActivity_setSensitivity(JNIEnv *env, jobject, jfloat value) {
     g_state.sensitivity = value;
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getAimIntensity(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getAimIntensity(JNIEnv *env, jobject) {
     return g_state.aimIntensity;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setAimIntensity(JNIEnv *env, jobject, jfloat value) {
+Java_com_ffpanel_panel_MainActivity_setAimIntensity(JNIEnv *env, jobject, jfloat value) {
     g_state.aimIntensity = value;
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_ffpanel_native_MainActivity_getModSpeed(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_getModSpeed(JNIEnv *env, jobject) {
     return g_state.modSpeed;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_setModSpeed(JNIEnv *env, jobject, jfloat value) {
+Java_com_ffpanel_panel_MainActivity_setModSpeed(JNIEnv *env, jobject, jfloat value) {
     g_state.modSpeed = value;
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_activateAll(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_activateAll(JNIEnv *env, jobject) {
     for (int i = 0; i < 5; i++) {
         g_state.features[i].enabled = true;
     }
@@ -434,7 +434,7 @@ Java_com_ffpanel_native_MainActivity_activateAll(JNIEnv *env, jobject) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_deactivateAll(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_deactivateAll(JNIEnv *env, jobject) {
     for (int i = 0; i < 5; i++) {
         g_state.features[i].enabled = false;
     }
@@ -450,7 +450,7 @@ Java_com_ffpanel_native_MainActivity_deactivateAll(JNIEnv *env, jobject) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_ffpanel_native_MainActivity_resetAll(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_resetAll(JNIEnv *env, jobject) {
     g_state.sensitivity = 50.0f;
     g_state.aimIntensity = 75.0f;
     g_state.modSpeed = 100.0f;
@@ -475,7 +475,7 @@ Java_com_ffpanel_native_MainActivity_resetAll(JNIEnv *env, jobject) {
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_ffpanel_native_MainActivity_isMasterEnabled(JNIEnv *env, jobject) {
+Java_com_ffpanel_panel_MainActivity_isMasterEnabled(JNIEnv *env, jobject) {
     return g_state.masterEnabled ? JNI_TRUE : JNI_FALSE;
 }
 

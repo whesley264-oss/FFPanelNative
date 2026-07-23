@@ -197,7 +197,7 @@ static FFRenderer* g_renderer = nullptr;
 
 extern "C" {
     JNIEXPORT void JNICALL
-    Java_com_ffpanel_native_Renderer_init(JNIEnv *env, jclass, jint width, jint height) {
+    Java_com_ffpanel_panel_Renderer_init(JNIEnv *env, jclass, jint width, jint height) {
         if (!g_renderer) {
             g_renderer = new FFRenderer();
             g_renderer->init(width, height);
@@ -205,14 +205,14 @@ extern "C" {
     }
     
     JNIEXPORT void JNICALL
-    Java_com_ffpanel_native_Renderer_render(JNIEnv *env, jclass, jfloat dt) {
+    Java_com_ffpanel_panel_Renderer_render(JNIEnv *env, jclass, jfloat dt) {
         if (g_renderer) {
             g_renderer->render(dt);
         }
     }
     
     JNIEXPORT void JNICALL
-    Java_com_ffpanel_native_Renderer_shutdown(JNIEnv *env, jclass) {
+    Java_com_ffpanel_panel_Renderer_shutdown(JNIEnv *env, jclass) {
         if (g_renderer) {
             g_renderer->shutdown();
             delete g_renderer;

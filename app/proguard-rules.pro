@@ -2,4 +2,4 @@
 -keepattributes *Annotation*
 -keepattributes SourceFile,LineNumberTable
 -keep public class * extends java.lang.Exception
--keep class com.ffpanel.native.** { *; }
+-keep class com.ffpanel.panel.** { *; }

@@ -1,4 +1,4 @@
-package com.ffpanel.native;
+package com.ffpanel.panel;
 
 public class Renderer {
     static {
