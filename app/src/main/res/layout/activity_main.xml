@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="FF PANEL PRO" android:textColor="#00FF88" android:textSize="22sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="C++ NATIVE + ESP v2.0" android:textColor="#8A8A9A" android:textSize="10sp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/status_badge_bg" android:padding="8dp">
+                <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/status_dot"/>
+                <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="STANDBY" android:textColor="#00FF88" android:textSize="10sp" android:layout_marginStart="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- STATS -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:orientation="vertical" android:background="@drawable/stat_card_bg" android:padding="10dp" android:layout_marginEnd="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PRECISÃO" android:textColor="#8A8A9A" android:textSize="8sp"/>
+                <TextView android:id="@+id/tvPrecision" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textColor="#FF6B35" android:textSize="14sp" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:orientation="vertical" android:background="@drawable/stat_card_bg" android:padding="10dp" android:layout_marginStart="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MODS" android:textColor="#8A8A9A" android:textSize="8sp"/>
+                <TextView android:id="@+id/tvActiveMods" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/5" android:textColor="#00D4FF" android:textSize="14sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:orientation="vertical" android:background="@drawable/stat_card_bg" android:padding="10dp" android:layout_marginEnd="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ALVOS" android:textColor="#8A8A9A" android:textSize="8sp"/>
+                <TextView android:id="@+id/tvEnemyCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#FF4757" android:textSize="14sp" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:orientation="vertical" android:background="@drawable/stat_card_bg" android:padding="10dp" android:layout_marginStart="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ESP ATIVOS" android:textColor="#8A8A9A" android:textSize="8sp"/>
+                <TextView android:id="@+id/tvEspActive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/6" android:textColor="#00FF88" android:textSize="14sp" android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- COMBAT MODULES -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚔️ COMBATE" android:textColor="#8A8A9A" android:textSize="10sp" android:layout_marginBottom="8dp"/>
+
+        <!-- AIM -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="36dp" android:layout_height="36dp" android:text="🎯" android:textSize="18sp" android:gravity="center" android:background="@drawable/icon_bg"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="AIM ASSIST" android:textColor="#FFF" android:textSize="13sp" android:layout_marginStart="10dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchAim" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- NO RECOIL -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="36dp" android:layout_height="36dp" android:text="🔫" android:textSize="18sp" android:gravity="center" android:background="@drawable/icon_bg"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="NO RECOIL" android:textColor="#FFF" android:textSize="13sp" android:layout_marginStart="10dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchRecoil" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- SPEED -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="36dp" android:layout_height="36dp" android:text="⚡" android:textSize="18sp" android:gravity="center" android:background="@drawable/icon_bg"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="SPEED HACK" android:textColor="#FFF" android:textSize="13sp" android:layout_marginStart="10dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- FLY -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="16dp">
+            <TextView android:layout_width="36dp" android:layout_height="36dp" android:text="🦅" android:textSize="18sp" android:gravity="center" android:background="@drawable/icon_bg"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="FLY MOD" android:textColor="#FFF" android:textSize="13sp" android:layout_marginStart="10dp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchFly" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- ESP SECTION -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👁️ ESP WALLHACK" android:textColor="#FF4757" android:textSize="10sp" android:layout_marginBottom="8dp"/>
+
+        <!-- ESP MAIN TOGGLE -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_module_bg" android:padding="14dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="40dp" android:layout_height="40dp" android:text="👁️" android:textSize="20sp" android:gravity="center" android:background="@drawable/esp_icon_bg"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ESP WALLHACK" android:textColor="#FF4757" android:textSize="14sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ver inimigos através das paredes" android:textColor="#8A8A9A" android:textSize="10sp"/>
+            </LinearLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEsp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#FF4757" app:trackTint="#2A1A1A"/>
+        </LinearLayout>
+
+        <!-- ESP TYPES -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tipos de Visualização" android:textColor="#8A8A9A" android:textSize="10sp" android:layout_marginBottom="6dp"/>
+
+        <!-- BOX ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="📦" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Box ESP" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Retângulos" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- LINE ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="📏" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Line ESP" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Linhas até você" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspLine" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- SKELETON ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="💀" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Skeleton ESP" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mostrar ossos" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspSkeleton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- NAME ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="🏷️" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Name ESP" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Nome + Distância" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- GLOW ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="✨" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Glow/Highlight" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Brilho nos alvos" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspGlow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- CORNERED BOX ESP -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"
+            android:background="@drawable/esp_item_bg" android:padding="10dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="28dp" android:layout_height="28dp" android:text="◢" android:textSize="14sp" android:gravity="center"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Cornered Box" android:textColor="#FFF" android:textSize="12sp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cantos highlight" android:textColor="#8A8A9A" android:textSize="9sp"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchEspCornered" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- ESP COLORS -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cores do ESP" android:textColor="#8A8A9A" android:textSize="10sp" android:layout_marginBottom="6dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <Button android:id="@+id/btnEspRed" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="🔴" android:textSize="16sp" android:backgroundTint="#FF0000" android:layout_marginEnd="3dp"/>
+            <Button android:id="@+id/btnEspGreen" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="🟢" android:textSize="16sp" android:backgroundTint="#00FF00" android:layout_marginEnd="3dp"/>
+            <Button android:id="@+id/btnEspBlue" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="🔵" android:textSize="16sp" android:backgroundTint="#0080FF" android:layout_marginEnd="3dp"/>
+            <Button android:id="@+id/btnEspYellow" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="🟡" android:textSize="16sp" android:backgroundTint="#FFFF00" android:layout_marginEnd="3dp"/>
+            <Button android:id="@+id/btnEspMagenta" android:layout_width="0dp" android:layout_height="38dp" android:layout_weight="1" android:text="🟣" android:textSize="16sp" android:backgroundTint="#FF00FF"/>
+        </LinearLayout>
+
+        <!-- ESP SETTINGS -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/esp_settings_bg" android:padding="12dp" android:layout_marginBottom="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Configurações ESP" android:textColor="#FF4757" android:textSize="11sp" android:layout_marginBottom="10dp"/>
+            
+            <!-- Glow Intensity -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="💡 Intensidade Glow" android:textColor="#FFF" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tvGlowValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="50%" android:textColor="#00FF88" android:textSize="11sp"/>
+                </LinearLayout>
+                <SeekBar android:id="@+id/seekbarGlowIntensity" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="50" android:progressTint="#00FF88" android:thumbTint="#00FF88"/>
+            </LinearLayout>
+
+            <!-- Thickness -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="📏 Espessura Linha" android:textColor="#FFF" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tvThicknessValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2px" android:textColor="#00FF88" android:textSize="11sp"/>
+                </LinearLayout>
+                <SeekBar android:id="@+id/seekbarEspThickness" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="10" android:progress="2" android:progressTint="#00FF88" android:thumbTint="#00FF88"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CONTROL PANEL -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️ CONTROLE C++" android:textColor="#8A8A9A" android:textSize="10sp" android:layout_marginBottom="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MASTER TOGGLE" android:textColor="#FFF" android:textSize="12sp" android:textStyle="bold"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchMaster" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#00FF88" app:trackTint="#1A1A25"/>
+        </LinearLayout>
+
+        <!-- SENSITIVITY -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🎮 Sensibilidade" android:textColor="#FFF" android:textSize="11sp"/>
+                <TextView android:id="@+id/tvSensValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="50%" android:textColor="#00FF88" android:textSize="11sp"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekbarSensitivity" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="50" android:progressTint="#00FF88" android:thumbTint="#00FF88"/>
+        </LinearLayout>
+
+        <!-- AIM INTENSITY -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🎯 Intensidade AIM" android:textColor="#FFF" android:textSize="11sp"/>
+                <TextView android:id="@+id/tvAimIntensityValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="75%" android:textColor="#00FF88" android:textSize="11sp"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekbarAimIntensity" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="75" android:progressTint="#00FF88" android:thumbTint="#00FF88"/>
+        </LinearLayout>
+
+        <!-- MOD SPEED -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="⚡ Velocidade Mod" android:textColor="#FFF" android:textSize="11sp"/>
+                <TextView android:id="@+id/tvModSpeedValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="100%" android:textColor="#00FF88" android:textSize="11sp"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seekbarModSpeed" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="150" android:progress="100" android:progressTint="#00FF88" android:thumbTint="#00FF88"/>
+        </LinearLayout>
+
+        <!-- UPTIME -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/module_bg" android:padding="12dp" android:layout_marginBottom="16dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="⏱️ Tempo de Uso" android:textColor="#FFF" android:textSize="11sp"/>
+            <TextView android:id="@+id/tvUptime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00:00" android:textColor="#FF00FF" android:textSize="11sp"/>
+        </LinearLayout>
+
+        <!-- BUTTONS -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/btnActivateAll" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="✓ ATIVAR" android:textColor="#0A0A0F" android:textStyle="bold" android:textSize="11sp" android:backgroundTint="#00FF88" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnDeactivateAll" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:text="✕ DESATIVAR" android:textColor="#FF4757" android:backgroundTint="@android:color/transparent" android:strokeColor="#FF4757" android:strokeWidth="2" android:textSize="11sp" android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <Button android:id="@+id/btnReset" android:layout_width="match_parent" android:layout_height="44dp" android:text="↺ RESETAR TUDO" android:textColor="#00FF88" android:backgroundTint="@android:color/transparent" android:strokeColor="#00FF88" android:strokeWidth="2" android:textSize="11sp" android:layout_marginTop="8dp"/>
+
+        <Button android:id="@+id/btnSettings" android:layout_width="match_parent" android:layout_height="40dp" android:text="⚙️ CONFIGURAÇÕES AVANÇADAS" android:textColor="#8A8A9A" android:backgroundTint="@android:color/transparent" android:strokeColor="#8A8A9A" android:strokeWidth="1" android:textSize="10sp" android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
