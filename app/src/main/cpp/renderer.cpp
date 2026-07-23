@@ -1,6 +1,7 @@
 #include <GLES3/gl3.h>
 #include <EGL/egl.h>
 #include <android/log.h>
+#include <jni.h>
 #include <math.h>
 #include <vector>
 #include <string>
