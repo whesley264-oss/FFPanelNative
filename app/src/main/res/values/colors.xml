@@ -5,4 +5,5 @@
     <color name="ff_orange">#FF6B35</color>
     <color name="bg_dark">#0A0A0F</color>
     <color name="bg_card">#12121A</color>
+    <color name="ic_launcher_background">#0A0A0F</color>
 </resources>
